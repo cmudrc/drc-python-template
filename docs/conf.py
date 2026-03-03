@@ -8,9 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-project = "design-research-python-template"
-copyright = "2026, design-research-python-template contributors"
-author = "design-research-python-template contributors"
+project = "drc-python-template"
+copyright = "2026, drc-python-template contributors"
+author = "drc-python-template contributors"
 
 extensions = [
     "sphinx.ext.autodoc",

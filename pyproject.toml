@@ -3,7 +3,7 @@ requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "design-research-python-template"
+name = "drc-python-template"
 version = "0.1.0"
 description = "An opinionated starter template for typed Python libraries"
 readme = "README.md"
@@ -40,9 +40,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/cmudrc/design-research-python-template"
-Repository = "https://github.com/cmudrc/design-research-python-template"
-Issues = "https://github.com/cmudrc/design-research-python-template/issues"
+Homepage = "https://github.com/cmudrc/drc-python-template"
+Repository = "https://github.com/cmudrc/drc-python-template"
+Issues = "https://github.com/cmudrc/drc-python-template/issues"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
@@ -52,7 +52,7 @@ include-package-data = true
 where = ["src"]
 
 [tool.setuptools.package-data]
-design_research_python_template = ["py.typed"]
+drc_python_template = ["py.typed"]
 
 [tool.pytest.ini_options]
 addopts = "-q"
@@ -79,7 +79,7 @@ convention = "google"
 "tests/*.py" = ["D"]
 
 [tool.mypy]
-packages = ["design_research_python_template"]
+packages = ["drc_python_template"]
 python_version = "3.12"
 warn_unused_configs = true
 check_untyped_defs = true

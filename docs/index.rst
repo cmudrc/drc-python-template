@@ -1,7 +1,7 @@
-design-research-python-template
-===============================
+drc-python-template
+===================
 
-`design-research-python-template` is a reusable baseline for typed Python
+`drc-python-template` is a reusable baseline for typed Python
 packages. It keeps the starting point small while still shipping the same core
 developer ergonomics used in the sibling design research repositories.
 

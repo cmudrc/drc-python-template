@@ -63,7 +63,7 @@ qa: lint fmt-check type test
 
 coverage: check-python
 	mkdir -p artifacts/coverage
-	PYTHONPATH=src $(PYTEST) --cov=src/design_research_python_template --cov-report=term --cov-report=json:artifacts/coverage/coverage.json -q
+	PYTHONPATH=src $(PYTEST) --cov=src/drc_python_template --cov-report=term --cov-report=json:artifacts/coverage/coverage.json -q
 	$(PYTHON) scripts/check_coverage_thresholds.py --coverage-json artifacts/coverage/coverage.json
 
 docstrings-check: check-python
@@ -91,6 +91,7 @@ release-check: check-python
 ci: qa coverage docstrings-check docs-check run-example release-check
 
 clean:
-	rm -rf .coverage .mypy_cache .pytest_cache .ruff_cache artifacts build dist docs/_build src/design_research_python_template.egg-info
+	rm -rf .coverage .mypy_cache .pytest_cache .ruff_cache artifacts build dist docs/_build
+	find src -maxdepth 2 -type d -name "*.egg-info" -prune -exec rm -rf {} + 2>/dev/null || true
 	find . -type d -name "__pycache__" -prune -exec rm -rf {} + 2>/dev/null || true
 	find . -type f \( -name "*.pyc" -o -name ".coverage.*" \) -exec rm -f {} + 2>/dev/null || true

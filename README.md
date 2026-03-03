@@ -1,6 +1,6 @@
-# design-research-python-template
+# drc-python-template
 
-`design-research-python-template` is a compact starter for typed Python
+`drc-python-template` is a compact starter for typed Python
 libraries. It borrows the shared project shape from
 `design-research-agents` and `design-research-problems`, but keeps the initial
 surface area small enough to customize quickly.
@@ -43,7 +43,7 @@ make repro
 |- docs/
 |- examples/
 |- scripts/
-|- src/design_research_python_template/
+|- src/drc_python_template/
 |- tests/
 |- AGENTS.md
 |- CONTRIBUTING.md
