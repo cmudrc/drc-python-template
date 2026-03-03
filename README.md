@@ -39,17 +39,42 @@ make repro
 
 ```text
 .
-|- .github/workflows/
-|- docs/
-|- examples/
-|- scripts/
-|- src/drc_python_template/
-|- tests/
-|- AGENTS.md
-|- CONTRIBUTING.md
-|- Makefile
-`- pyproject.toml
+|-- .github/
+|   `-- workflows/
+|-- docs/
+|-- examples/
+|-- scripts/
+|-- src/
+|   `-- drc_python_template/
+|-- tests/
+|-- .gitignore
+|-- .pre-commit-config.yaml
+|-- .python-version
+|-- AGENTS.md
+|-- CONTRIBUTING.md
+|-- LICENSE
+|-- Makefile
+|-- README.md
+|-- pyproject.toml
+`-- uv.lock
 ```
+
+- `.github/workflows/` contains the GitHub Actions definitions for CI and docs publishing.
+- `docs/` contains the Sphinx source files for the package documentation.
+- `examples/` contains small runnable scripts that demonstrate the public API.
+- `scripts/` contains repository maintenance and validation helpers used by `make`.
+- `src/drc_python_template/` contains the installable Python package code.
+- `tests/` contains the pytest suite that protects the public behavior.
+- `.gitignore` defines which local caches, virtualenvs, and build outputs stay untracked.
+- `.pre-commit-config.yaml` provides an optional pre-commit hook that runs the local CI gate.
+- `.python-version` pins the preferred reproducible Python interpreter version.
+- `AGENTS.md` documents repository-specific guidance for coding agents and contributors.
+- `CONTRIBUTING.md` documents the human contributor workflow and quality checks.
+- `LICENSE` contains the repository's software license.
+- `Makefile` provides the standard local commands for setup, linting, testing, docs, and releases.
+- `README.md` is the top-level overview and quickstart guide for the repository.
+- `pyproject.toml` defines package metadata, dependencies, and tool configuration.
+- `uv.lock` pins the reproducible dependency graph used by `make repro`.
 
 ## Customizing The Template
 
