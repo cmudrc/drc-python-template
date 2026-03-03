@@ -39,3 +39,5 @@ except ImportError:
     html_theme = "alabaster"
 
 html_static_path: list[str] = []
+html_logo = "drc.png"
+html_theme_options = {"logo_only": True}

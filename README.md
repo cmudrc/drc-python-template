@@ -39,24 +39,33 @@ make repro
 
 ```text
 .
-|-- .github/
-|   `-- workflows/
-|-- docs/
-|-- examples/
-|-- scripts/
-|-- src/
-|   `-- drc_python_template/
-|-- tests/
-|-- .gitignore
-|-- .pre-commit-config.yaml
-|-- .python-version
-|-- AGENTS.md
-|-- CONTRIBUTING.md
-|-- LICENSE
-|-- Makefile
-|-- README.md
-|-- pyproject.toml
-`-- uv.lock
+├── AGENTS.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── Makefile
+├── README.md
+├── docs
+│   ├── api.rst
+│   ├── conf.py
+│   ├── dependencies_and_extras.rst
+│   ├── drc.png
+│   ├── index.rst
+│   └── quickstart.rst
+├── examples
+│   ├── README.md
+│   └── basic_usage.py
+├── pyproject.toml
+├── scripts
+│   ├── check_coverage_thresholds.py
+│   ├── check_docs_consistency.py
+│   └── check_google_docstrings.py
+├── src
+│   ├── design_research_python_template
+│   └── drc_python_template
+├── tests
+│   ├── test_core.py
+│   └── test_public_api.py
+└── uv.lock
 ```
 
 - `.github/workflows/` contains the GitHub Actions definitions for CI and docs publishing.
