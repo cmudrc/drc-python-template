@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from drc_python_template import build_default_blueprint, describe_project
+from python_template import build_default_blueprint, describe_project
 
 
 def main() -> None:
     """Print the default project summary."""
-    blueprint = build_default_blueprint("drc-python-template")
+    blueprint = build_default_blueprint("python-template")
     print(describe_project(blueprint))
 
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import drc_python_template as package
+import python_template as package
 
 
 def test_public_exports_match_the_curated_api() -> None:

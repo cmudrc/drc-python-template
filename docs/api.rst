@@ -1,7 +1,7 @@
 API Reference
 =============
 
-.. automodule:: drc_python_template
+.. automodule:: python_template
    :members:
    :undoc-members:
    :show-inheritance:

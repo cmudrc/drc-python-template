@@ -14,9 +14,9 @@ autoclass_content = "both"
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-project = "drc-python-template"
-copyright = "2026, drc-python-template contributors"
-author = "drc-python-template contributors"
+project = "python-template"
+copyright = "2026, python-template contributors"
+author = "python-template contributors"
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -51,10 +51,7 @@ html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_logo = "drc.png"
 html_title = project
-if html_theme == "sphinx_rtd_theme":
-    html_theme_options = {"logo_only": False}
-else:
-    html_theme_options = {}
+html_theme_options = {"logo_only": False} if html_theme == "sphinx_rtd_theme" else {}
 
 _VIEWPORT_META_RE = re.compile(r'<meta name="viewport"[^>]*>', re.IGNORECASE)
 

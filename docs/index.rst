@@ -1,7 +1,7 @@
-drc-python-template
+python-template
 ===================
 
-`drc-python-template` is a reusable baseline for typed Python
+`python-template` is a reusable baseline for typed Python
 packages. It keeps the starting point small while still shipping the same core
 developer ergonomics used in the sibling design research repositories.
 
