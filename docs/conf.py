@@ -2,8 +2,14 @@
 
 from __future__ import annotations
 
+import os
+import re
 import sys
 from pathlib import Path
+
+from sphinx.application import Sphinx
+
+autoclass_content = "both"
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -28,16 +34,45 @@ autosummary_generate = True
 autosummary_imported_members = True
 nitpicky = True
 
-templates_path: list[str] = []
+templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
-try:
-    import sphinx_rtd_theme  # noqa: F401
-
+if os.environ.get("READTHEDOCS") == "True":
     html_theme = "sphinx_rtd_theme"
-except ImportError:
-    html_theme = "alabaster"
+else:
+    try:
+        import sphinx_rtd_theme  # noqa: F401
 
-html_static_path: list[str] = []
+        html_theme = "sphinx_rtd_theme"
+    except ImportError:
+        html_theme = "alabaster"
+
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 html_logo = "drc.png"
-html_theme_options = {"logo_only": True}
+html_title = project
+if html_theme == "sphinx_rtd_theme":
+    html_theme_options = {"logo_only": False}
+else:
+    html_theme_options = {}
+
+_VIEWPORT_META_RE = re.compile(r'<meta name="viewport"[^>]*>', re.IGNORECASE)
+
+
+def _dedupe_viewport_meta(
+    app: object,
+    pagename: str,
+    templatename: str,
+    context: dict[str, object],
+    doctree: object,
+) -> None:
+    """Keep one viewport tag by removing extra entries from Sphinx metatags."""
+    del app, pagename, templatename, doctree
+    metatags = context.get("metatags")
+    if isinstance(metatags, str):
+        context["metatags"] = _VIEWPORT_META_RE.sub("", metatags)
+
+
+def setup(app: Sphinx) -> None:
+    """Register build-time hooks."""
+    app.connect("html-page-context", _dedupe_viewport_meta)
