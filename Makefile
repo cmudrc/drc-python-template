@@ -7,7 +7,7 @@ SPHINX ?= $(PYTHON) -m sphinx
 BUILD ?= $(PYTHON) -m build
 TWINE ?= $(PYTHON) -m twine
 UV ?= $(if $(wildcard .venv/bin/uv),.venv/bin/uv,uv)
-REPRO_PYTHON ?= $(shell cat .python-version 2>/dev/null || echo 3.12.12)
+REPRO_PYTHON ?= $(shell cat .python-version 2>/dev/null || echo 3.12)
 REPRO_EXTRAS ?= dev
 
 .PHONY: help check-python check-uv dev install-dev repro lock \
